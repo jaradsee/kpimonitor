@@ -1,0 +1,47 @@
+<?php
+
+use yii\helpers\Html;
+use yii\grid\GridView;
+use yii\widgets\Pjax;
+
+/* @var $this yii\web\View */
+/* @var $searchModel frontend\models\KeykpiSearch */
+/* @var $dataProvider yii\data\ActiveDataProvider */
+
+$this->title = 'Keykpis';
+$this->params['breadcrumbs'][] = $this->title;
+?>
+<div class="keykpi-index">
+
+    <h1><?= Html::encode($this->title) ?></h1>
+    <?php // echo $this->render('_search', ['model' => $searchModel]); ?>
+
+    <p>
+        <?= Html::a('Create Keykpi', ['create'], ['class' => 'btn btn-success']) ?>
+    </p>
+
+    <?= GridView::widget([
+        'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
+        'columns' => [
+            ['class' => 'yii\grid\SerialColumn'],
+
+            'keyk_id',
+            'kpi_id',
+            'kpi_name',
+            'target',
+            'result',
+            //'successkey',
+            //'year',
+            //'qarter',
+            //'user_key',
+            //'position',
+            //'Created_at',
+            //'Crearted_by',
+            //'Updated_at',
+            //'Updated_by',
+
+            ['class' => 'yii\grid\ActionColumn'],
+        ],
+    ]); ?>
+</div>
